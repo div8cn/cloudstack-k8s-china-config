@@ -18,7 +18,7 @@
                             "-initial-cluster-token", 
                             "skydns-etcd"
                         ], 
-                        "image": "outrider/etcd-amd64:2.2.1", 
+                        "image": "outrider/etcd-amd64", 
                         "volumeMounts": [
                             {
                                 "mountPath": "/var/etcd/data", 
@@ -59,7 +59,7 @@
                             }, 
                             "timeoutSeconds": 5
                         }, 
-                        "image": "outrider/kube2sky:1.14", 
+                        "image": "outrider/kube2sky", 
                         "args": [
                             "--domain=cluster.local"
                         ], 
@@ -75,7 +75,7 @@
                         }
                     }, 
                     {
-                        "image": "outrider/skydns:2015-10-13-8c72f8c", 
+                        "image": "outrider/skydns", 
                         "args": [
                             "-machines=http://127.0.0.1:4001", 
                             "-addr=0.0.0.0:53", 
@@ -107,7 +107,7 @@
                         ]
                     }, 
                     {
-                        "image": "outrider/exechealthz:1.0", 
+                        "image": "outrider/exechealthz", 
                         "args": [
                             "-cmd=nslookup kubernetes.default.svc.cluster.local 127.0.0.1 >/dev/null", 
                             "-port=8080"
